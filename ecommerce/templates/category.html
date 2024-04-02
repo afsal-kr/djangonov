@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-4" style="margin-bottom:30px">
+    <img src="{% static 'images/banner_edit_1_1.jpg' %}" height="450px" width="100%">
+</div>
+<div class="container-fluid mt-1" style="margin-bottom:50px">
+    <center><h2 style="margin-bottom:50px;">COLLECTIONS</h2></center>
+    <p>the act of collecting. something that is collected; a group of objects or an amount of material accumulated in one location, especially for some purpose or as a result of some process: a stamp collection;a collection of unclaimed hats in the checkroom;a collection of books on Churchill.</p>
+</div>
+<div class="container-fluid" style="margin-bottom:50px">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem;">
+  <img src="{{ i.image.url }}" height="300px" class="card-img-top" alt="...">
+  <div class="card-body">
+      <h5 class="card-title">{{ i.name }}</h5>
+      <p class="card-text"></p>
+    <a href="{% url 'shop:products' i.id %}" class="btn btn-primary">PRODUCTS</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

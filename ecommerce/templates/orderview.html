@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<h3 style="color:black; margin-top:10px;">NAME OF THE CUSTOMER:{{user}}</h3></center>
+{% for i in cart %}
+<div class="container-fluid" style="width:1100px;">
+
+    <div class="row border border-1 border-dark" >
+        <div class="col-4 me-5 " style="margin-bottom:10px;">
+    <img class="mt-2" src="{{i.product.image.url}}" height="300px" width="400px">
+        </div>
+        <div class="col-6 me-5 mt-2 pt-3" style="padding-left:100px;">
+    <h4>PRODUCT NAME:{{i.product.name}}</h4>
+    <h4>PRODUCT PRICE:{{i.product.price}}</h4>
+    <h4>ADDRESS:{{i.address}}</h4>
+    <h4>PHONE:{{i.phone}}</h4>
+    <h4>NO OF ITEMS:{{i.no_of_item}}</h4>
+    <h4>ORDERED ON:{{i.ordered_date}}</h4>
+    <h4>DELIVERY STATUS:{{i.delivery_status}}</h4>
+        </div>
+    </div>
+</div><br>
+{% endfor %}
+{% endblock %}

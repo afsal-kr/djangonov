@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+REGISTER
+{% endblock %}
+{% block content %}
+<h1 class="text-center">REGISTER</h1>
+<form method="POST"enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">USER NAME</label>
+    <input type="text" class="form-control" name="u">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">PASSWORD</label>
+    <input type="password" class="form-control" name="p">
+  </div>
+    <div class="mb-3">
+    <label class="form-label">CONFIRM PASSWORD</label>
+    <input type="password" class="form-control" name="c">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">E-MAIL</label>
+    <input type="text" class="form-control" name="e">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
