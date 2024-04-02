@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.http import HttpResponse
 from cart.models import Cart,Order,Account
 
 admin.site.register(Cart)
